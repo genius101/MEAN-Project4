@@ -4,10 +4,10 @@
 
 <h2>MEAN Web stack consists of following components:</h2>
 
-- [ ]	MongoDB: (Document database) - Stores and allows to retrieve data.
-- [ ]	Express: (Back-end application framework) - Makes requests to Database for Reads and Writes.
-- [ ]	Angular: (Front-end application framework) - Handles Client and Server Requests
-- [ ]	Node.js: (JavaScript runtime environment) - Accepts requests and displays results to end user
+<p>MongoDB: (Document database) - Stores and allows to retrieve data.</p>
+<p>Express: (Back-end application framework) - Makes requests to Database for Reads and Writes.</p>
+<p>Angular: (Front-end application framework) - Handles Client and Server Requests</p>
+<p>Node.js: (JavaScript runtime environment) - Accepts requests and displays results to end user</p>
 
 <h2>Step 1: Install NodeJs</h2>
 
@@ -15,13 +15,16 @@
 
 <h4>Install Node.js on the server by running the following configurations:</h4>
 
-- [ ] Update Ubuntu:
+<p>Update Ubuntu:</p>
+
 - [x] sudo apt update
 
-- [ ] Upgrade Ubuntu:
+<p>Upgrade Ubuntu:</p>
+
 - [x] sudo apt upgrade
 
-- [ ] Install NodeJS:
+<p>Install NodeJS:</p>
+
 - [x] sudo apt install -y nodejs
 
 
@@ -31,47 +34,58 @@
 
 <h4>Install MongoDB and verify it is up and running</h4>
 	
-- [ ] Run these two commands:
+<p>Run these two commands:</p>
+
 - [x] sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
 - [x] echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
 
 ![2 a i](https://user-images.githubusercontent.com/10243139/118356743-a25d8500-b56e-11eb-8311-4e0ea59aab57.jpg)
 	
-- [ ] Install MongoDB by running the command below:
+<p>Install MongoDB by running the command below:</p>
+
 - [x] sudo apt install -y mongodb
 
-- [ ] Start the server with the command below:
+<p>Start the server with the command below:</p>
+
 - [x] sudo service mongodb start
 
-- [ ] Verify the server is up and running:
+<p>Verify the server is up and running:</p>
+
 - [x] sudo systemctl status mongodb
 
 ![2 a iv](https://user-images.githubusercontent.com/10243139/118356788-d769d780-b56e-11eb-8fb8-1649dce6d426.jpg)
 
 <h4>Install other dependencies</h4>
 
-- [ ] Install the Node Package Manager:
+<p>Install the Node Package Manager:</p>
+
 - [x] sudo apt install -y npm
 	
-- [ ] Install body-parser package which is needed to help us process JSON files passed in requests to the server:
+<p>Install body-parser package which is needed to help us process JSON files passed in requests to the server:</p>
+
 - [x] sudo npm install body-parser
 
-- [ ] Now lets create a folder named ‘Books’:
+<p>Now lets create a folder named Books:</p>
+
 - [x] mkdir Books
 
-- [ ] Lets switch into the Books folder:
+<p>Lets switch into the Books folder:</p>
+
 - [x] cd Books/
 
-- [ ] In the Books directory, Initialize npm project:
+<p>In the Books directory, Initialize npm project:</p>
+
 - [x] npm init
-- [ ] You would need to press enter repeatedly till it brings back the terminal prompt as shown in the image below
+
+<p>You would need to press enter repeatedly till it brings back the terminal prompt as shown in the image below</p>
 
 ![2 b vi](https://user-images.githubusercontent.com/10243139/118356802-e781b700-b56e-11eb-82d9-9a6292d56474.jpg)
 
-- [ ] Add a file to the current directory named server.js:
+<p>Add a file to the current directory named server.js:</p>
+
 - [x] nano server.js
 
-- [ ] Copy the following code in the server.js file:
+<p>Copy the following code in the server.js file:</p>
 
       var express = require('express');
       var bodyParser = require('body-parser');
@@ -88,16 +102,19 @@
 
 <h3>Express is a minimal and flexible Node.js web application framework that provides features for web and mobile applications. We will use Express in to pass book information to and from our MongoDB database.</h3>
 
-- [ ] We need to install Mongoose to establish a schema for the database to store data of our book register:
+<p>We need to install Mongoose to establish a schema for the database to store data of our book register:</p>
+
 - [x] sudo npm install express mongoose
 
-- [ ] In Books folder, create a folder named apps and switch into the apps folder:
+<p>In Books folder, create a folder named apps and switch into the apps folder:</p>
+
 - [x] mkdir apps && cd apps
 
-- [ ] Lets create a file named routes.js and open the file:
+<p>Lets create a file named routes.js and open the file:</p>
+
 - [x] nano routes.js
 
-- [ ] Copy the following into the routes.js file: 
+<p>Copy the following into the routes.js file:</p> 
 
       var Book = require('./models/book');
       module.exports = function(app) {
@@ -138,13 +155,15 @@
       };
       
   
-- [ ] In the apps folder, create a folder named models and switch into the folder:
+<p>In the apps folder, create a folder named models and switch into the folder:</p>
+
 - [x] mkdir models && cd models
 
-- [ ] Create a file named book.js:
+<p>Create a file named book.js:</p>
+
 - [x] nano book.js
 
-- [ ] Copy the following code in just created book.js file:
+<p>Copy the following code in just created book.js file:</p>
 
       var mongoose = require('mongoose');
       var dbHost = 'mongodb://localhost:27017/test';
@@ -164,16 +183,19 @@
 
 <h3>AngularJS provides a web framework for creating dynamic views in our web applications. For this project, we would use AngularJS to connect our web page with Express and perform actions on our book register.</h3>
 
-- [ ] Lets change the directory back to ‘Books’:
+<p>Lets change the directory back to ‘Books’:</p>
+
 - [x] cd ../..
 
-- [ ] Create a folder named public and switch into the public folder:
+<p>Create a folder named public and switch into the public folder:</p>
+
 - [x] mkdir public && cd public
 
-- [ ] Add a file named script.js:
+<p>Add a file named script.js:</p>
+
 - [x] nano script.js
 
-- [ ] Copy and paste the Code below (controller configuration defined) into the script.js file:
+<p>Copy and paste the Code below (controller configuration defined) into the script.js file:</p>
 
       var app = angular.module('myApp', []);
       app.controller('myCtrl', function($scope, $http) {
@@ -214,10 +236,11 @@
       });
       
       
-- [ ] In public folder, create a file named index.html:
+<p>In public folder, create a file named index.html:</p>
+
 - [x] nano index.html
 
-- [ ] Copy and paste the code below into index.html file:
+<p>Copy and paste the code below into index.html file:</p>
 
       <!doctype html>
       <html ng-app="myApp" ng-controller="myCtrl">
@@ -271,29 +294,31 @@
       </html>
       
       
-- [ ]  Change the directory back up to Books:
+<p>Change the directory back up to Books:</p>
+
 - [x] cd ..
 
-- [ ] Start the server by running this command:
+<p>Start the server by running this command:</p>
+
 - [ ] node server.js      
 
 ![4 viii](https://user-images.githubusercontent.com/10243139/118357336-8e675280-b571-11eb-8622-ec204d391bff.jpg)
 
-- [ ] You need to open TCP port 3300 in your AWS Web Console for your EC2 Instance
+<p>You need to open TCP port 3300 in your AWS Web Console for your EC2 Instance</p>
 
 ![4 ix](https://user-images.githubusercontent.com/10243139/118357352-a343e600-b571-11eb-997b-9ed29b22d506.png)
 
-- [ ] Now you can access our Book Register web application from the Internet with a browser using Public IP address or Public DNS name.
+<p>Now you can access our Book Register web application from the Internet with a browser using Public IP address or Public DNS name.</p>
 
 ![4 x](https://user-images.githubusercontent.com/10243139/118357367-b5258900-b571-11eb-8a0d-085405972850.jpg)
 
-- [ ] This is what the backend looks like from the console when you add data from the browser
+<p>This is what the backend looks like from the console when you add data from the browser</p>
 
 ![4 xi](https://user-images.githubusercontent.com/10243139/118357386-ca9ab300-b571-11eb-9256-87a93f795e85.jpg)
 
-- [ ] This is what it looks like when you refresh the browser
+<p>This is what it looks like when you refresh the browser</p>
 
 ![4 xii](https://user-images.githubusercontent.com/10243139/118357401-dd14ec80-b571-11eb-9b48-0b20117a7da4.jpg)
 
-Congratulations!
+<h1>Congratulations!</h1>
 
