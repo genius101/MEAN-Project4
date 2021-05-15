@@ -1,19 +1,20 @@
-In this project, we would be implementing a web solution based on MEAN stack in AWS Cloud.
+<h1> In this project, we would be implementing a web solution based on MEAN stack in AWS Cloud.</h1>
 
 ![host-mean-app-on-aws-img](https://user-images.githubusercontent.com/10243139/118354590-a20bbc80-b563-11eb-9aa1-4e50fefb5c5e.jpg)
 
-MEAN Web stack consists of following components:
+<h2>MEAN Web stack consists of following components:</h2>
 
 - [ ]	MongoDB: (Document database) - Stores and allows to retrieve data.
 - [ ]	Express: (Back-end application framework) - Makes requests to Database for Reads and Writes.
 - [ ]	Angular: (Front-end application framework) - Handles Client and Server Requests
 - [ ]	Node.js: (JavaScript runtime environment) - Accepts requests and displays results to end user
 
-Step 1: Install NodeJs
+<h2>Step 1: Install NodeJs</h2>
 
-This would be used in this project to set up the Express routes and AngularJS controllers.
+<h3>This would be used in this project to set up the Express routes and AngularJS controllers.</h3>
 
-a) Install Node.js on the server by running the following configurations:
+<h4>Install Node.js on the server by running the following configurations:</h4>
+
 - [ ] Update Ubuntu:
 - [x] sudo apt update
 
@@ -24,11 +25,11 @@ a) Install Node.js on the server by running the following configurations:
 - [x] sudo apt install -y nodejs
 
 
-Step 2: Install MongoDB
+<h2>Step 2: Install MongoDB</h2>
 
-This is used to store data in flexible, JSON-like documents
+<h3>This is used to store data in flexible, JSON-like documents</h3>
 
-a) Install MongoDB and verify it is up and running
+<h4>Install MongoDB and verify it is up and running</h4>
 	
 - [ ] Run these two commands:
 - [x] sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
@@ -47,7 +48,7 @@ a) Install MongoDB and verify it is up and running
 
 ![2 a iv](https://user-images.githubusercontent.com/10243139/118356788-d769d780-b56e-11eb-8fb8-1649dce6d426.jpg)
 
-b) Install other dependencies
+<h4>Install other dependencies</h4>
 
 - [ ] Install the Node Package Manager:
 - [x] sudo apt install -y npm
@@ -83,9 +84,9 @@ b) Install other dependencies
           console.log('Server up: http://localhost:' + app.get('port'));
       });
       
-Step 3: Install Express and set up routes to the server
+<h2>Step 3: Install Express and set up routes to the server</h2>
 
-Express is a minimal and flexible Node.js web application framework that provides features for web and mobile applications. We will use Express in to pass book information to and from our MongoDB database.
+<h3>Express is a minimal and flexible Node.js web application framework that provides features for web and mobile applications. We will use Express in to pass book information to and from our MongoDB database.</h3>
 
 - [ ] We need to install Mongoose to establish a schema for the database to store data of our book register:
 - [x] sudo npm install express mongoose
@@ -159,9 +160,9 @@ Express is a minimal and flexible Node.js web application framework that provide
       var Book = mongoose.model('Book', bookSchema);
       module.exports = mongoose.model('Book', bookSchema);
       
-Step 4 - Access the routes with AngularJS
+<h2>Step 4 - Access the routes with AngularJS</h2>
 
-AngularJS provides a web framework for creating dynamic views in our web applications. For this project, we would use AngularJS to connect our web page with Express and perform actions on our book register.
+<h3>AngularJS provides a web framework for creating dynamic views in our web applications. For this project, we would use AngularJS to connect our web page with Express and perform actions on our book register.</h3>
 
 - [ ] Lets change the directory back to ‘Books’:
 - [x] cd ../..
